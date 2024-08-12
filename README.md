@@ -1,4 +1,4 @@
-# TEMPLATE
+# Easel and Entap
 
 This session is part of [**Biodiversity Genomics Academy 2024**](https://thebgacademy.org/)
 
