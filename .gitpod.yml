@@ -3,9 +3,9 @@ image: gitpod/workspace-full-vnc
 tasks:
   - name: "Setup Environment"
     init: |
-      # Install Singularity and other dependencies
+      # Install Docker and other dependencies
       sudo apt-get update
-      sudo apt-get install -y wget git unzip singularity
+      sudo apt-get install -y wget git unzip docker.io
 
       # Install Java (for Nextflow)
       sudo apt-get install -y openjdk-11-jdk
@@ -13,6 +13,7 @@ tasks:
       # Install Nextflow
       wget -qO- https://get.nextflow.io | bash
       sudo mv nextflow /usr/local/bin/
+      sudo chmod +x /usr/local/bin/nextflow
 
       # Verify Nextflow installation
       nextflow -version
@@ -38,10 +39,9 @@ tasks:
                   "gffread:0.12.7--hd03093a_1"
                   "gffcompare:0.12.6--h4ac6f70_2")
 
-      # Loop through the containers and build Singularity images
+      # Loop through the containers and pull Docker images
       for container in "${containers[@]}"; do
-          image_name="$(echo "${container}" | tr ':' '-' )"
-          singularity pull singularity/depot.galaxyproject.org-singularity-${image_name}.img https://depot.galaxyproject.org/singularity/${container}
+          docker pull quay.io/biocontainers/${container}
       done
 
       containers=("sagnikbanerjee15/psiclass:1.0.3" 
@@ -51,8 +51,7 @@ tasks:
                   "plantgenomics/easel:augustus")
 
       for container in "${containers[@]}"; do
-          image_name="$(echo "${container}" | tr '/' '-' | tr ':' '-')"
-          singularity pull singularity/${image_name}.img "docker://${container}"
+          docker pull "${container}"
       done
 
 ports:
