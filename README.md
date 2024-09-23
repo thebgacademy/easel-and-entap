@@ -8,13 +8,35 @@ This session is part of [**Biodiversity Genomics Academy 2024**](https://thebgac
 
 ## Session Leader(s)
 
-Cynthia Webster - PhD Student @ University of Connecticut
+- Cynthia Webster - PhD Student @ University of Connecticut
 
-Alex Hart
+- Alex Hart - Research Assistant @ University of Connecticut
 
 ## Description
 
-Introduction: *What is genome annotation? *Current challenges *Best practices; Introduction to functional annotation with EnTAP; Introduction to structural and functional annotation with EASEL; Running EnTAP as a standalone tool: *Installing dependencies *Setting parameters and executing; Running EASEL: *Installing dependencies *Setting parameters and executing; Annotating Juglans cinerea with EASEL and EnTAP: *Evidence generation *Gene prediction *Secondary and primary feature filtering *Evaluation *Benchmarking against commonly used annotation tools; By the end of this session you will be able to: (1) Structurally annotate a eukaryotic genome assembly with protein and RNA extrinsic evidence using the EASEL nextflow pipeline, (2) Assess non-model structural genome annotations with comprehensive metrics that include providing functional annotation with EnTAP, (3) Address challenges with accuracy and efficiency with structural and functional genome annotation.
+Introduction: 
+- What is genome annotation? 
+- Current challenges 
+- Best practices
+  - Introduction to functional annotation with EnTAP
+  - Introduction to structural and functional annotation with EASEL
+
+Running EnTAP as a standalone tool: 
+- Installing dependencies
+- Setting parameters and executing
+
+Running EASEL: 
+- Installing dependencies
+- Setting parameters and executing
+
+Annotating _Juglans cinerea_ with EASEL and EnTAP: 
+- Evidence generation
+- Gene prediction
+- Secondary and primary feature filtering
+- Evaluation
+- Benchmarking against commonly used annotation tools
+
+By the end of this session you will be able to: (1) Structurally annotate a eukaryotic genome assembly with protein and RNA extrinsic evidence using the EASEL nextflow pipeline, (2) Assess non-model structural genome annotations with comprehensive metrics that include providing functional annotation with EnTAP, (3) Address challenges with accuracy and efficiency with structural and functional genome annotation.
 
 ## Prerequisites
 
