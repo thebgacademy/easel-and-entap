@@ -5,7 +5,7 @@ tasks:
     init: |
       # Install Singularity and other dependencies
       sudo apt-get update
-      sudo apt-get install -y wget git unzip singularity-container
+      sudo apt-get install -y wget git unzip singularity
 
       # Install Java (for Nextflow)
       sudo apt-get install -y openjdk-11-jdk
