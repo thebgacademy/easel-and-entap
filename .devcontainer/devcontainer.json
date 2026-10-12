@@ -4,17 +4,14 @@
     "dockerfile": "Dockerfile"
   },
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/desktop-lite:1": {}
   },
   "privileged": true,
-  "forwardPorts": [5900, 6080],
+  "forwardPorts": [6080],
   "portsAttributes": {
-    "5900": {
-      "label": "VNC",
-      "onAutoForward": "ignore"
-    },
     "6080": {
-      "label": "VNC Web Client",
+      "label": "desktop",
       "onAutoForward": "openBrowser",
       "visibility": "public"
     }
