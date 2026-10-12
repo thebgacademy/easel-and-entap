@@ -10,6 +10,3 @@ RUN export NXF_VER=24.10.5 && \
     curl -fsSL https://get.nextflow.io | bash && \
     install -m 0755 nextflow /usr/local/bin/nextflow && \
     rm nextflow
-
-# Verify Nextflow installation
-RUN nextflow -version
