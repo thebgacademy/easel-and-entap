@@ -13,7 +13,7 @@
   "portsAttributes": {
     "6080": {
       "label": "desktop",
-      "onAutoForward": "openBrowser",
+			"onAutoForward": "silent",
       "visibility": "public"
     }
   },
