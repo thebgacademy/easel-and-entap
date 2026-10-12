@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     unzip \
     gzip \
-    openjdk-11-jdk \
+    openjdk-17-jdk \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
