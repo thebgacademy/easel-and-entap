@@ -12,9 +12,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Nextflow
-RUN wget -qO- https://get.nextflow.io | bash \
-    && install -m 0755 nextflow /usr/local/bin/nextflow \
-    && rm nextflow
+RUN export NXF_VER=24.10.5 && \
+    curl -fsSL https://get.nextflow.io | bash && \
+    install -m 0755 nextflow /usr/local/bin/nextflow && \
+    rm nextflow
 
 # Verify Nextflow installation
 RUN nextflow -version
