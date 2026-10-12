@@ -25,8 +25,6 @@ bga_get_data() {
     fi
 
     echo "Repository location: $repo"
-    echo "Files:"
-    ls -lah "$repo"
 }
 
 bga_welcome() {
