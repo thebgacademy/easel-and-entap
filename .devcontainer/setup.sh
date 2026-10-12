@@ -35,7 +35,7 @@ bga_welcome() {
     echo "          Welcome to the BGA Workshop!"
     echo "================================================"
     echo "  Workshop: EASEL & EnTAP"
-    echo "  Nextflow: $(nextflow -version 2>&1 | head -n 1)"
+    echo "  Nextflow: $(nextflow -version 2>&1 | grep "version")"
     echo ""
     bga_get_data
     echo ""
@@ -44,3 +44,13 @@ bga_welcome() {
 }
 
 EOF
+
+# Display workshop welcome and data setup on interactive terminals
+cat << 'EOF' >> /home/vscode/.bashrc
+if [[ $- == *i* ]]; then
+    bga_welcome
+fi
+
+EOF
+
+source /home/vscode/.bashrc
