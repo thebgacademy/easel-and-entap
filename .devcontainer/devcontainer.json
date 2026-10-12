@@ -1,0 +1,23 @@
+{
+  "name": "BGA Workshop - Nextflow and EnTAP",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "privileged": true,
+  "forwardPorts": [5900, 6080],
+  "portsAttributes": {
+    "5900": {
+      "label": "VNC",
+      "onAutoForward": "ignore"
+    },
+    "6080": {
+      "label": "VNC Web Client",
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh"
+}
