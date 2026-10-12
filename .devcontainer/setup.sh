@@ -1,32 +1,46 @@
-#!/usr/bin/env bash
-set -e
 
-# Verify Nextflow
-nextflow -version
+cat <<'EOF' >> /home/vscode/.bashrc
 
-# Wait for Docker to become available
-# Just to make sure the daemon has started
-until docker info >/dev/null 2>&1; do
-  echo "Waiting for Docker..."
-done
+# BGA Workshop setup functions
 
-# Clone the workshop repository if it isn't already present
-echo "Getting data..."
-if [ ! -d /workspaces/bgaworkshop-2024 ]; then
-  git clone https://github.com/cynthiawebster/bgaworkshop-2024.git \
-    /workspaces/bgaworkshop-2024
-fi
+bga_get_data() {
+    local repo="/workspaces/bgaworkshop-2024"
 
-cat <<'EOF' >> /etc/bash.bashrc
+    echo ""
+    echo "================================================"
+    echo "          Downloading Workshop Data"
+    echo "================================================"
 
-# BGA Workshop welcome message
-if [ -n "$PS1" ]; then
+    if [ -d "$repo/.git" ]; then
+        echo "Workshop repository already exists."
+    else
+        echo "Cloning workshop repository..."
+        if ! git clone --progress \
+            https://github.com/cynthiawebster/bgaworkshop-2024.git \
+            "$repo"; then
+            echo "ERROR: Failed to download workshop repository."
+            return 1
+        fi
+        echo "Workshop repository downloaded successfully!"
+    fi
+
+    echo "Repository location: $repo"
+    echo "Files:"
+    ls -lah "$repo"
+}
+
+bga_welcome() {
     echo ""
     echo "================================================"
     echo "          Welcome to the BGA Workshop!"
     echo "================================================"
-    echo "  Nextflow v24.05 and Docker are ready to use."
-    echo "  Workshop: EASEL & EnTap"
+    echo "  Workshop: EASEL & EnTAP"
+    echo "  Nextflow: $(nextflow -version 2>&1 | head -n 1)"
     echo ""
-fi
+    bga_get_data
+    echo ""
+    echo "Setup check complete. Happy analysing!"
+    echo ""
+}
+
 EOF
