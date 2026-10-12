@@ -9,9 +9,9 @@ until docker info >/dev/null 2>&1; do
   echo "Waiting for Docker..."
 done
 
-# Pull EnTAP Docker image
-echo "Pulling plantgenomics/entap:latest..."
-docker pull plantgenomics/entap:latest
+# # Pull EnTAP Docker image
+# echo "Pulling plantgenomics/entap:latest..."
+# docker pull plantgenomics/entap:latest
 
 # Clone the workshop repository if it isn't already present
 echo "Getting data..."
