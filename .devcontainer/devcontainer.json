@@ -1,8 +1,6 @@
 {
   "name": "BGA Workshop - EASEL and EnTAP",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "ghcr.io/thebgacademy/easel_entap_2024:sha-56832f73f58fe455841c272171535f16318fc848",
   "features": {
     // We need docker in docker due to how the pipeline runs containers
     "ghcr.io/devcontainers/features/docker-in-docker:4.1.3": {},
