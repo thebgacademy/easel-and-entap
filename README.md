@@ -4,7 +4,7 @@ This session is part of [**Biodiversity Genomics Academy 2024**](https://thebgac
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/thebgacademy/easel-and-entap)
 
-[YouTube Recording](https://www.youtube.com/@thebiodiversitygenomicsacademy) <-- To be updated after BGA24
+[YouTube Recording](https://www.youtube.com/watch?v=01ZCy5f72F8)
 
 ## Session Leader(s)
 
